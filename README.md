@@ -1,5 +1,7 @@
 MP4 converter and French translation included.
 
+**Windows download:** [French + MP4 installer](https://github.com/dawson03022000-ops/nightingale-MP4-converteur-inclu/releases/latest) — remembered export settings, gold highlighting, color presets, and upcoming lyrics with a circular countdown.
+
 This fork includes a French interface and customizable MP4 karaoke export with existing timed lyrics, backgrounds, a countdown, lyric timing adjustment, and export progress. Upstream contributions: [French translation #180](https://github.com/rzru/nightingale/pull/180) and [MP4 export #181](https://github.com/rzru/nightingale/pull/181).
 
 <p align="center">
