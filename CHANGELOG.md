@@ -13,6 +13,12 @@ below.
 
 ## [Unreleased]
 
+### Features
+
+- Added French as an interface language.
+
+- Desktop users can export MP4 karaoke videos using existing timed lyrics, with a chosen image or video background, customizable lyrics, word highlighting, portrait or landscape resolution, guide-vocal volume, an optional countdown, lyric timing adjustment, and export progress.
+
 ### Fixes
 
 - The phone queue link now keeps the same address across launches, so a QR code scanned earlier keeps working. A phone that scans a new code is also no longer turned away as "remote link is not valid" because of a cookie left from an earlier code.
@@ -27,6 +33,8 @@ below.
 ## [1.4.0] - 2026-11-06
 
 ### Features
+
+- Added French as an interface language.
 
 - Added an interface language selector with English, German, and Simplified Chinese, plus contributor-friendly translation catalogs for the whole app. The choice is saved with your Nightingale settings, so it follows you to the playback window and self-hosted sessions. Switching language updates every surface, including the separate playback window and later system changes, and counted text follows each language's own plural rules.
 - Quickly analyze, play, or queue songs from the song list and card menus.
@@ -55,6 +63,8 @@ below.
 ## [1.3.0] - 2026-10-15
 
 ### Features
+
+- Added French as an interface language.
 
 - Desktop and Playback windows now remember their size and whether they were maximized between launches.
 - Added independent **Combine multi-channel** controls for solo and multiplayer scoring, shown when a multi-channel desktop input is available.
@@ -105,6 +115,8 @@ below.
 
 ### Features
 
+- Added French as an interface language.
+
 - Added a playback queue to the song browser with a queue count, compact next-up sidebar, per-song removal, confirmed queue clearing, and keyboard and gamepad navigation.
 - Added Session playback mode, which opens playback in a dedicated desktop window or browser tab while the menu remains available for live queue management.
 - Playback settings now have a dedicated tab with a proportional live preview, lyric placement controls, and 50–250% lyric and pitch-graph scaling (100% by default).
@@ -136,6 +148,8 @@ below.
 
 ### Features
 
+- Added French as an interface language.
+
 - Leaderboards — open a global top-10 ranking across every profile and song from the profile menu, or open a song-specific leaderboard to compare each profile's personal best. Scored songs expose the per-song board directly from their details panel.
 - Personal-best ratings — song cards, table rows, and song details now show the active profile's best score as a five-star rating, with the exact score available on hover.
 
@@ -156,6 +170,8 @@ below.
 
 ### Features
 
+- Added French as an interface language.
+
 - Provide your own lyrics — paste timed **LRC / Enhanced LRC** to skip transcription (optionally skipping stem separation to play over the original mix), or plain lyrics to run alignment. Available on un-analyzed songs via a new **Provide LRC** action and in the existing lyrics editor; LRCLIB matches now include plain-text results. No-stems songs still detect key for key/tempo shifts, hide the guide control, and score pitch against the original mix (flagged as less accurate).
 - Plex Media Server provider — authorize through Plex's hosted PIN flow with account server discovery, or connect a LAN-only PMS directly with its URL and token. Choose one or more music libraries; Nightingale syncs their tracks and associated playable clips, metadata, covers, and read-only audio playlists. Playback and analysis lazily cache original media, video uses the authenticated range proxy, and every normal provider request goes directly to the selected PMS rather than app.plex.tv. Tokens are encrypted at rest and never placed in frontend media URLs.
 - Playlist browsing — open existing Plex, Jellyfin, Navidrome, `.m3u`, `.m3u8`, and `.pls` playlists from the sidebar.
@@ -170,6 +186,8 @@ below.
 ## [0.9.0] - 2026-07-06
 
 ### Features
+
+- Added French as an interface language.
 
 - Docker support for self-hosted web mode — a multi-stage [`docker/Dockerfile`](docker/Dockerfile) and [`docker/compose.yaml`](docker/compose.yaml) build the `server` binary (with the React bundle embedded) into a container that runs without the systemd/Caddy/Avahi installer. The same Dockerfile produces both a CPU image (`debian:bookworm-slim`) and a CUDA/GPU image (via `--build-arg RUNTIME_BASE=nvidia/cuda:...` plus the NVIDIA Container Toolkit). The ML toolchain still bootstraps on first launch into the mounted `/data` volume, so the image stays small and dependencies persist across recreates. The data folder is fixed to `/data` (the setup wizard skips the data-folder step) and the music library follows a `/songs` convention via a new `NIGHTINGALE_LIBRARY_PATH` env var (defaulted in the image) — mount your music at `/songs` and Nightingale pins a folder source there on startup and hides the in-app source pickers, so nothing needs typing in the browser. Mic scoring still needs a TLS reverse proxy for a secure context. See [docs/docker](https://nightingale.cafe/docs/docker.html).
 - Cantonese (`yue`) lyric support — Cantonese now joins Japanese, Mandarin, and Korean as a first-class CJK language. It rides the same per-character forced-alignment path as Mandarin (reusing the Chinese wav2vec2 model and jieba tokenization, since Cantonese is written in the same Han characters), works with the Qwen alignment backend, and shows [Jyutping](https://github.com/CanCLID/ToJyutping) romanized readings above each token. The per-song language override now lists **Mandarin** and **Cantonese** separately (the former "Chinese" label). Existing installs should re-run setup so the new Cantonese romanization dependency is installed.

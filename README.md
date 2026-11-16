@@ -1,3 +1,7 @@
+MP4 converter and French translation included.
+
+This fork includes a French interface and customizable MP4 karaoke export with existing timed lyrics, backgrounds, a countdown, lyric timing adjustment, and export progress. Upstream contributions: [French translation #180](https://github.com/rzru/nightingale/pull/180) and [MP4 export #181](https://github.com/rzru/nightingale/pull/181).
+
 <p align="center">
   <img src="client/src/assets/images/logo.png" alt="Nightingale" width="400">
 </p>
